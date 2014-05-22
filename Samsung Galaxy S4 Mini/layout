@@ -1,0 +1,133 @@
+parts {
+   
+   device {
+        display {
+            width   540
+            height  960
+            x       0
+            y       0
+        }
+    }
+    
+    portrait {
+		background {
+			image   background_port.png
+		}
+		buttons {
+			power {
+				image   button_vertical.png
+				x	624
+				y	340
+			}
+			volume-up {
+				image   button_vertical.png
+				x	0
+				y	235
+			}
+			volume-down {
+				image   button_vertical.png
+				x	0
+				y	347
+			}
+			home {
+				image   btn_home_horizontal.png
+				x	242
+				y	1163
+			}
+			soft-left {
+				image   btn_keys.png
+				x	118
+				y	1163
+			}
+			back {
+				image   btn_keys.png
+				x	475
+				y	1163
+			}
+		}
+    }
+    
+    landscape {
+		background {
+			image   background_land.png
+		}
+		buttons {
+			power {
+				image   button_horizontal.png
+				x	340
+				y	0
+			}
+			volume-up {
+				image   button_horizontal.png
+				x	235
+				y	624
+			}
+			volume-down {
+				image   button_horizontal.png
+				x	347
+				y	624
+			}
+			home {
+				image   btn_home_vertical.png
+				x	1163
+				y	241
+			}
+			soft-left {
+				image   btn_keys.png
+				x	1163
+				y	102
+			}
+			back {
+				image   btn_keys.png
+				x	1163
+				y	466
+			}
+		}
+	}
+}
+
+layouts {
+    portrait {
+        width     638
+        height    1278
+        color     0xffffff
+        event     EV_SW:0:1
+        
+        part1 {
+            name    portrait
+            x       0
+            y       0
+        }
+
+        part2 {
+            name    device
+            x       49
+            y       160
+        }
+    }
+    
+    landscape {
+        width     1278
+        height    638
+        color     0xffffff
+        event     EV_SW:0:0
+        
+        part1 {
+            name    landscape
+            x       0
+            y       0
+        }
+
+        part2 {
+            name    device
+            x       160
+            y       589
+            rotation  3
+        }
+    }
+}
+
+network {
+    speed  full
+    delay  none
+}

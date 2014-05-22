@@ -1,0 +1,134 @@
+parts {
+	device {
+		display {
+			width   320
+			height  480
+			x       0
+			y       0
+		}
+	}
+	portrait {
+		background {
+			image   background_port.png
+		}
+		buttons {
+			power {
+				image   button_vertical.png
+				x	380
+				y	134
+			}
+			volume-up {
+				image   button_vertical.png
+				x	0
+				y	195
+			}
+			volume-down {
+				image   button_vertical.png
+				x	0
+				y	266
+			}
+			soft-left {
+				image key.png
+				x 79
+				y 635
+			}
+			home {
+				image home_port.png
+				x 162
+				y 635
+			}
+			back {
+				image key.png
+				x 280
+				y 635
+			}
+		}
+	}
+	landscape {
+		background {
+			image   background_land.png
+		}
+		buttons {
+			power {
+				image   button_horizontal.png
+				x	131
+				y	0
+			}
+			volume-up {
+				image   button_horizontal.png
+				x	193
+				y	380
+			}
+			volume-down {
+				image   button_horizontal.png
+				x	275
+				y	380
+			}
+			soft-left {
+				image key.png
+				x 635
+				y 278
+			}
+			home {
+				image home_land.png
+				x 635
+				y 162
+			}
+			back {
+				image key.png
+				x 635
+				y 76
+			}
+		}
+	}
+}
+
+layouts {
+	portrait {
+		width     396
+		height    729
+		color     0xe0e0e0
+		event     EV_SW:0:1
+	
+		part1 {
+			name    portrait
+			x       0
+			y       0
+		}
+
+		part2 {
+			name    device
+			x       39
+			y       125
+		}
+	}
+	
+	landscape {
+		width     729
+		height    396
+		color     0xe0e0e0
+		event     EV_SW:0:0
+
+		part1 {
+			name    landscape
+			x       0
+			y       0
+		}
+
+		part2 {
+			name      device
+			x         125
+			y         357
+			rotation  3
+		}
+	}
+}
+
+keyboard {
+	charmap qwerty2
+}
+
+network {
+	speed  full
+	delay  none
+}
